@@ -4,15 +4,32 @@ using UnityEngine;
 
 public class InteractiveObject : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [Header("Config")]
+    [SerializeField] InteractionType type;
+    [SerializeField] string name;
+
+    private void Start()
     {
-        
+        name = gameObject.name.Replace("Held", "");
     }
 
-    // Update is called once per frame
-    void Update()
+    public void Interact()
     {
-        
+        int objIndex = Inventory.inst.HeldObjectNames.IndexOf(name);
+        switch (type)
+        {
+            case InteractionType.Pickup:
+                Inventory.inst.AddObject(objIndex);
+                Destroy(gameObject);
+                break;
+            case InteractionType.Interact:
+
+                break;
+        }
     }
+}
+
+public enum InteractionType
+{
+    Pickup, Interact
 }
