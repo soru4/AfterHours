@@ -60,14 +60,18 @@
   <ItemGroup>
     <Compile Include="Assets/SampleScenes/Menu/Scripts/PauseMenu.cs" />
     <Compile Include="Assets/Scripts/InteractiveObject.cs" />
+    <Compile Include="Assets/Scripts/PlayerAnimation.cs" />
     <Compile Include="Assets/SampleScenes/Scripts/LevelReset.cs" />
     <Compile Include="Assets/Scripts/Inventory.cs" />
     <Compile Include="Assets/SampleScenes/Menu/Scripts/SceneAndURLLoader.cs" />
     <Compile Include="Assets/SampleScenes/Scripts/PlaceTargetWithMouse.cs" />
     <Compile Include="Assets/Scripts/QuestManager.cs" />
+    <Compile Include="Assets/Scripts/GameManager.cs" />
     <Compile Include="Assets/Scripts/Quest.cs" />
     <Compile Include="Assets/SampleScenes/Scripts/ParticleSceneControls.cs" />
     <Compile Include="Assets/Scripts/DoorOpen.cs" />
+    <Compile Include="Assets/ModularFirstPersonController/FirstPersonController/FirstPersonController.cs" />
+    <Compile Include="Assets/Scripts/TaskManager.cs" />
     <Compile Include="Assets/Scripts/Task.cs" />
     <Compile Include="Assets/SampleScenes/Menu/Scripts/MenuSceneLoader.cs" />
     <Compile Include="Assets/SampleScenes/Scripts/SlowMoButton.cs" />

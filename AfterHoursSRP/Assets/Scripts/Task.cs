@@ -1,18 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
-public class Task : MonoBehaviour
+[CreateAssetMenu(fileName = "Task", menuName = "ScriptableObjects/Task", order = 2)]
+public class Task : ScriptableObject
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public string taskName;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    public bool taskCompleted = false;
+
+    public Vector3 taskPosition;
+
 }

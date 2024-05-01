@@ -354,6 +354,7 @@
 -r:"Library/Bee/artifacts/200b0aE.dag/UnityEngine.UI.ref.dll"
 -analyzer:"/Applications/Unity/Hub/Editor/2022.3.7f1/Unity.app/Contents/Tools/Unity.SourceGenerators/Unity.Properties.SourceGenerator.dll"
 -analyzer:"/Applications/Unity/Hub/Editor/2022.3.7f1/Unity.app/Contents/Tools/Unity.SourceGenerators/Unity.SourceGenerators.dll"
+"Assets/ModularFirstPersonController/FirstPersonController/FirstPersonController.cs"
 "Assets/SampleScenes/Menu/Scripts/MenuSceneLoader.cs"
 "Assets/SampleScenes/Menu/Scripts/PauseMenu.cs"
 "Assets/SampleScenes/Menu/Scripts/SceneAndURLLoader.cs"
@@ -363,11 +364,14 @@
 "Assets/SampleScenes/Scripts/PlaceTargetWithMouse.cs"
 "Assets/SampleScenes/Scripts/SlowMoButton.cs"
 "Assets/Scripts/DoorOpen.cs"
+"Assets/Scripts/GameManager.cs"
 "Assets/Scripts/InteractiveObject.cs"
 "Assets/Scripts/Inventory.cs"
+"Assets/Scripts/PlayerAnimation.cs"
 "Assets/Scripts/Quest.cs"
 "Assets/Scripts/QuestManager.cs"
 "Assets/Scripts/Task.cs"
+"Assets/Scripts/TaskManager.cs"
 -langversion:9.0
 
 /deterministic
