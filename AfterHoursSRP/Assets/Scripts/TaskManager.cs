@@ -27,7 +27,7 @@ public class TaskManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+/*
 
         clipBoardText.text = "";
         foreach (Task x in listOfTasks)
@@ -109,6 +109,8 @@ public class TaskManager : MonoBehaviour
                 clipBoardText.text += "[ ] " + x.taskName;
             }
         }
+
+        */
     }
  
     private void OnDrawGizmos()
