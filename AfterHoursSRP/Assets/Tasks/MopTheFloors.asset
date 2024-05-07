@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 99fc31629c19b4598a52bc95b2bbba4d, type: 3}
+  m_Name: MopTheFloors
+  m_EditorClassIdentifier: 
+  taskName: Mop The Floors
+  taskCompleted: 0
+  taskPosition: {x: 15.18, y: 0, z: 0}
+  taskObjects:
+  - interactiveObject: {fileID: 4774108774531535715, guid: 7aaedaa10e6df4f7ebd068dc43230c7a, type: 3}
+    type: 1

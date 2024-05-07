@@ -1,17 +1,40 @@
 ﻿<Properties StartupConfiguration="{C3B71E36-7515-A537-F033-D18D34BF6F1A}|">
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/QuestManager.cs">
     <Files>
+<<<<<<< Updated upstream
       <File FileName="Assets/Scripts/Quest.cs" Line="12" Column="59" />
       <File FileName="Assets/Scripts/QuestManager.cs" Line="51" Column="10" />
       <File FileName="Assets/Scripts/InteractiveObject.cs" Line="1" Column="1" />
+=======
+      <File FileName="Assets/Scripts/Quest.cs" Line="13" Column="2" />
+      <File FileName="Assets/Scripts/QuestManager.cs" />
+      <File FileName="Assets/Scripts/Inventory.cs" />
+      <File FileName="Assets/Scripts/InteractiveObject.cs" />
+      <File FileName="Assets/Standard Assets/Characters/FirstPersonCharacter/Scripts/FirstPersonController.cs" />
+      <File FileName="Assets/Scripts/DoorOpen.cs" />
+      <File FileName="Assets/Scripts/Task.cs" />
+      <File FileName="Assets/Scripts/TaskManager.cs" Line="69" Column="53" />
+      <File FileName="Assets/Scripts/GameManager.cs" />
+>>>>>>> Stashed changes
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="AfterHoursSRP" expanded="True">
+<<<<<<< Updated upstream
             <Node name="Assets" expanded="True">
               <Node name="Scripts" expanded="True">
                 <Node name="QuestManager.cs" selected="True" />
+=======
+            <Node name="Assets" expanded="True" selected="True">
+              <Node name="Scripts" expanded="True" />
+              <Node name="Standard Assets" expanded="True">
+                <Node name="Characters" expanded="True">
+                  <Node name="FirstPersonCharacter" expanded="True">
+                    <Node name="Scripts" expanded="True" />
+                  </Node>
+                </Node>
+>>>>>>> Stashed changes
               </Node>
             </Node>
           </Node>
@@ -21,7 +44,11 @@
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+<<<<<<< Updated upstream
   <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="b565ee82-b0ec-4959-994a-191e48e806f9" />
+=======
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="1d60ab4c-9b60-426c-946a-c0453f6ce689" />
+>>>>>>> Stashed changes
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
