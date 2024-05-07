@@ -11,32 +11,86 @@ public class TaskManager : MonoBehaviour
     public List<Task> listOfTasks;
     public TMP_Text clipBoardText;
     public List<Task> currentTasks; 
-    public Transform player; 
-
+    public Transform player;
 
     // Start is called before the first frame update
     void Start()
     {
-
+        foreach(Task x in listOfTasks)
+        {
+            x.taskCompleted = false;
+        }
         OnNewDay();
-        InvokeRepeating("TaskCheck", 0, 0.6f);
+
     }
 
     // Update is called once per frame
     void Update()
-    {
-        
-    }
-    public void TaskCheck()
     {
 
 
         clipBoardText.text = "";
         foreach (Task x in listOfTasks)
         {
-            if(Vector3.Distance(x.taskPosition, player.position) < 10f)
+            if (!x.taskCompleted)
             {
-                x.taskCompleted = true; 
+                if (Vector3.Distance(x.taskPosition, player.position) < 10f)
+                {
+                    int z = 0;
+                    foreach (Task.Action action in x.taskObjects)
+                    {
+                        if (!action.hasDone)
+                            z++;
+                    }
+                    if (z == 0)
+                    {
+                        x.taskCompleted = true;
+                    }
+                    for (int i = 0; i < x.taskObjects.Count; i++)
+                    {
+                        Task.Action action = x.taskObjects[i];
+                        if (action.hasDone)
+                            continue;
+                        else
+                        {
+                            switch (action.type)
+                            {
+                                case InteractionType.Interact:
+                                    GameObject obj = null;
+                                    foreach (GameObject p in Inventory.inst.physicalHeldObjects)
+                                    {
+                                        if (p.name == action.interactiveObject.name)
+                                        {
+
+                                            obj = p;
+                                          
+                                        }
+                                    }
+                                    if (obj.activeInHierarchy)
+                                    {
+
+                                        if (Input.GetMouseButtonDown(0))
+                                        {
+                                            print(obj.name + "Has Interacted");
+                                            action.hasDone = true;
+                                            if(x.taskObjects.Count() == 1)
+                                            {
+                                                x.taskCompleted = true;
+                                            }
+                                        }
+
+                                    }
+                                    break;
+                                case InteractionType.Pickup:
+                                    if (Input.GetMouseButtonDown(0))
+                                    {
+
+                                    }
+                                    break;
+                            }
+                        }
+                    }
+                }
             }
         }
 
@@ -52,10 +106,11 @@ public class TaskManager : MonoBehaviour
             }
             else
             {
-                clipBoardText.text += "[] " + x.taskName;
+                clipBoardText.text += "[ ] " + x.taskName;
             }
         }
     }
+ 
     private void OnDrawGizmos()
     {
         foreach(Task x in listOfTasks)
@@ -84,7 +139,7 @@ public class TaskManager : MonoBehaviour
         }
         foreach(Task x in currentTasks)
         {
-            clipBoardText.text += "[] " + x.taskName;
+            clipBoardText.text += "[ ] " + x.taskName;
         }
 
     }
