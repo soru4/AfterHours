@@ -63,6 +63,7 @@
     <Compile Include="Assets/Scripts/PlayerAnimation.cs" />
     <Compile Include="Assets/SampleScenes/Scripts/LevelReset.cs" />
     <Compile Include="Assets/Scripts/Inventory.cs" />
+    <Compile Include="Assets/LightFlicker.cs" />
     <Compile Include="Assets/SampleScenes/Menu/Scripts/SceneAndURLLoader.cs" />
     <Compile Include="Assets/SampleScenes/Scripts/PlaceTargetWithMouse.cs" />
     <Compile Include="Assets/Scripts/QuestManager.cs" />
