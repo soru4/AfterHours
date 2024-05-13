@@ -15,3 +15,7 @@ MonoBehaviour:
   taskName: Mop The Floors
   taskCompleted: 0
   taskPosition: {x: 0, y: 0, z: 0}
+  taskObjects:
+  - interactiveObject: {fileID: 6310109124814522679, guid: 4794c8098a8804b1f9442fed4f68cbc1, type: 3}
+    type: 1
+    hasDone: 0

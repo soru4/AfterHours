@@ -14,7 +14,7 @@ public class Inventory : MonoBehaviour
     bool[] helds;
     public List<string> HeldObjectNames { get; set; }
 
-    [SerializeField] List<GameObject> physicalHeldObjects;
+    public List<GameObject> physicalHeldObjects;
 
     int index = 0;
 

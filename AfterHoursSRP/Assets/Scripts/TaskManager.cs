@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
-using System; 
+using System;
 using UnityEngine;
 using TMPro;
 
@@ -10,13 +10,13 @@ public class TaskManager : MonoBehaviour
 {
     public List<Task> listOfTasks;
     public TMP_Text clipBoardText;
-    public List<Task> currentTasks; 
+    public List<Task> currentTasks;
     public Transform player;
 
     // Start is called before the first frame update
     void Start()
     {
-        foreach(Task x in listOfTasks)
+        foreach (Task x in listOfTasks)
         {
             x.taskCompleted = false;
         }
@@ -27,7 +27,7 @@ public class TaskManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-/*
+
 
         clipBoardText.text = "";
         foreach (Task x in listOfTasks)
@@ -59,21 +59,21 @@ public class TaskManager : MonoBehaviour
                                     GameObject obj = null;
                                     foreach (GameObject p in Inventory.inst.physicalHeldObjects)
                                     {
-                                        if (p.name == action.interactiveObject.name)
+                                        if (p.name.Contains(action.interactiveObject.name))
                                         {
 
                                             obj = p;
-                                          
+
                                         }
                                     }
-                                    if (obj.activeInHierarchy)
+                                    if (obj && obj.activeInHierarchy)
                                     {
 
                                         if (Input.GetMouseButtonDown(0))
                                         {
                                             print(obj.name + "Has Interacted");
                                             action.hasDone = true;
-                                            if(x.taskObjects.Count() == 1)
+                                            if (x.taskObjects.Count() == 1)
                                             {
                                                 x.taskCompleted = true;
                                             }
@@ -109,13 +109,11 @@ public class TaskManager : MonoBehaviour
                 clipBoardText.text += "[ ] " + x.taskName;
             }
         }
-
-        */
     }
- 
+
     private void OnDrawGizmos()
     {
-        foreach(Task x in listOfTasks)
+        foreach (Task x in listOfTasks)
         {
             Gizmos.DrawWireSphere(x.taskPosition, 5);
         }
@@ -126,12 +124,13 @@ public class TaskManager : MonoBehaviour
         currentTasks.Clear();
         clipBoardText.text = "";
         List<int> chosen = new List<int>();
-        for(int i = 0; i < 2; i++)
+        for (int i = 0; i < 2; i++)
         {
-            int addQ = UnityEngine.Random.Range(0, listOfTasks.Count -1);
+            int addQ = UnityEngine.Random.Range(0, listOfTasks.Count - 1);
             print(addQ);
-            if (!chosen.Contains(addQ)) {
-                if(listOfTasks[addQ].taskCompleted == false)
+            if (!chosen.Contains(addQ))
+            {
+                if (listOfTasks[addQ].taskCompleted == false)
                 {
                     chosen.Add(addQ);
                     currentTasks.Add(listOfTasks[addQ]);
@@ -139,7 +138,7 @@ public class TaskManager : MonoBehaviour
             }
 
         }
-        foreach(Task x in currentTasks)
+        foreach (Task x in currentTasks)
         {
             clipBoardText.text += "[ ] " + x.taskName;
         }
