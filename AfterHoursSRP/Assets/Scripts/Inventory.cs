@@ -16,7 +16,7 @@ public class Inventory : MonoBehaviour
 
     public List<GameObject> physicalHeldObjects;
 
-    int index = 0;
+    public int index = 0;
 
     // Start is called before the first frame update
     void Start()

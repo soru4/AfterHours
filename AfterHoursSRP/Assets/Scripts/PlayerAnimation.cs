@@ -23,13 +23,15 @@ public class PlayerAnimation : MonoBehaviour
             anim.SetBool("PickUp", false);
         }
 
-        if (Input.GetKeyDown(KeyCode.E))
-        {
-            anim.SetBool("Emote", true);
-        }
-        else if (Input.GetKeyUp(KeyCode.E))
-        {
-            anim.SetBool("Emote", false);
+        if (Inventory.inst.index == 0) { 
+            if (Input.GetKeyDown(KeyCode.Q))
+            {
+                anim.SetBool("Emote", true);
+            }
+            else if (Input.GetKeyUp(KeyCode.Q))
+            {
+                anim.SetBool("Emote", false);
+            }
         }
     }
 }
