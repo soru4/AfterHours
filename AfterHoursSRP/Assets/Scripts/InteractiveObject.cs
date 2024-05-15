@@ -16,6 +16,7 @@ public class InteractiveObject : MonoBehaviour
     public void Interact()
     {
         int objIndex = Inventory.inst.HeldObjectNames.IndexOf(name);
+        print(gameObject.name + " " + objIndex);
         switch (type)
         {
             case InteractionType.Pickup:

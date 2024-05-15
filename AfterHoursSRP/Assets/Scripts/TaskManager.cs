@@ -34,21 +34,24 @@ public class TaskManager : MonoBehaviour
         {
             if (!x.taskCompleted)
             {
-                if (Vector3.Distance(x.taskPosition, player.position) < 10f)
+
+                int z = 0;
+                foreach (Task.Action action in x.taskObjects)
                 {
-                    int z = 0;
-                    foreach (Task.Action action in x.taskObjects)
+                    if (!action.hasDone)
+                        z++;
+                }
+                if (z == 0)
+                {
+                    x.taskCompleted = true;
+                }
+                for (int i = 0; i < x.taskObjects.Count; i++)
+                {
+                    Task.Action action =  x.taskObjects[i];
+                    if (Vector3.Distance(action.actionPos, player.position) < action.actionRadius)
                     {
-                        if (!action.hasDone)
-                            z++;
-                    }
-                    if (z == 0)
-                    {
-                        x.taskCompleted = true;
-                    }
-                    for (int i = 0; i < x.taskObjects.Count; i++)
-                    {
-                        Task.Action action = x.taskObjects[i];
+                        if (action.interactiveObject == null)
+                            action.hasDone = true;
                         if (action.hasDone)
                             continue;
                         else
@@ -71,12 +74,13 @@ public class TaskManager : MonoBehaviour
 
                                         if (Input.GetMouseButtonDown(0))
                                         {
-                                            print(obj.name + "Has Interacted");
-                                            action.hasDone = true;
-                                            if (x.taskObjects.Count() == 1)
+                                            //print(obj.name + "Has Interacted");
+                                            if (action.removeObject)
                                             {
-                                                x.taskCompleted = true;
+                                                Inventory.inst.RemoveObject(Inventory.inst.index);
                                             }
+                                            action.hasDone = true;
+
                                         }
 
                                     }
@@ -84,7 +88,7 @@ public class TaskManager : MonoBehaviour
                                 case InteractionType.Pickup:
                                     if (Input.GetMouseButtonDown(0))
                                     {
-
+                                        action.hasDone = true;
                                     }
                                     break;
                             }
@@ -101,12 +105,26 @@ public class TaskManager : MonoBehaviour
 
 
 
-                clipBoardText.text += "[" + ((char)0x221A).ToString() + "] " + x.taskName;
+                clipBoardText.text += "\n[" + ((char)0x221A).ToString() + "] " + x.taskName ;
 
             }
             else
             {
-                clipBoardText.text += "[ ] " + x.taskName;
+                float maxDist = -1;
+                foreach (Task.Action s in x.taskObjects)
+                {
+                    if (!s.hasDone)
+                        if (Vector3.Distance(s.actionPos, player.transform.position) > maxDist)
+                        {
+                            maxDist = Vector3.Distance(s.actionPos, player.transform.position);
+                            if (Vector3.Distance(s.actionPos, player.transform.position) < s.actionRadius)
+                                maxDist = 0;
+                            break;
+                        }
+
+
+                }
+                clipBoardText.text += "\n[ ] " + x.taskName + " - " + Math.Round(maxDist,1) + "m";
             }
         }
     }
@@ -115,7 +133,10 @@ public class TaskManager : MonoBehaviour
     {
         foreach (Task x in listOfTasks)
         {
-            Gizmos.DrawWireSphere(x.taskPosition, 5);
+            foreach (Task.Action y in x.taskObjects)
+            {
+                Gizmos.DrawWireSphere(y.actionPos, 1);
+            }
         }
     }
     public void OnNewDay()
@@ -126,7 +147,7 @@ public class TaskManager : MonoBehaviour
         List<int> chosen = new List<int>();
         for (int i = 0; i < 2; i++)
         {
-            int addQ = UnityEngine.Random.Range(0, listOfTasks.Count - 1);
+            int addQ = UnityEngine.Random.Range(0, listOfTasks.Count );
             print(addQ);
             if (!chosen.Contains(addQ))
             {

@@ -29,7 +29,6 @@ public class Inventory : MonoBehaviour
             HeldObjectNames.Add(obj.name.Replace("Held", ""));
         }
         helds = new bool[HeldObjectNames.Count];
-
         InitializeInventory();
     }
 
@@ -69,12 +68,15 @@ public class Inventory : MonoBehaviour
             return;
         int original = index;
 
+
+        int iter = 0;
         do
         {
+            iter++;
             index += (int)scroll;
             index = mod(index, helds.Length);
             //print(index);
-        } while (!helds[index]);
+        } while (!helds[index] && iter < 10);
         //print("__" + index);
 
         if (index != original)
@@ -102,10 +104,21 @@ public class Inventory : MonoBehaviour
     {
         if (i < 0 || i > helds.Length)
             return;
-        print(i);
+        print("add " + i);
         helds[i] = true;
         index = i;
         ChangeActiveObject();
     }
+
+    public void RemoveObject(int i)
+    {
+        if (i < 0 || i > helds.Length)
+            return;
+        print("remove " + i);
+        helds[i] = false;
+        if (index == i) Scroll(1);
+        ChangeActiveObject();
+    }
+
 
 }

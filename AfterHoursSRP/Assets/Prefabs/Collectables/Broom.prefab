@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 6320575039720709144}
   - component: {fileID: 1607178919510295032}
   - component: {fileID: 2683391277786561157}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Broom
   m_TagString: Untagged
   m_Icon: {fileID: 0}

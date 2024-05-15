@@ -14,8 +14,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   taskName: Mop The Floors
   taskCompleted: 0
-  taskPosition: {x: 0, y: 0, z: 0}
   taskObjects:
-  - interactiveObject: {fileID: 6310109124814522679, guid: 4794c8098a8804b1f9442fed4f68cbc1, type: 3}
+  - interactiveObject: {fileID: 4989479031151235526, guid: adb6f4b6eec2547f788df0379bb1f65f, type: 3}
     type: 1
+    actionPos: {x: -20.8, y: 4.25, z: -21.26}
+    removeObject: 0
+    actionRadius: 1
+    hasDone: 0
+  - interactiveObject: {fileID: 4989479031151235526, guid: adb6f4b6eec2547f788df0379bb1f65f, type: 3}
+    type: 1
+    actionPos: {x: -25, y: 4.05, z: -29.9}
+    removeObject: 0
+    actionRadius: 1
     hasDone: 0

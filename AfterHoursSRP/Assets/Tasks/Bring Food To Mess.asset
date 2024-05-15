@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 99fc31629c19b4598a52bc95b2bbba4d, type: 3}
+  m_Name: Bring Food To Mess
+  m_EditorClassIdentifier: 
+  taskName: Bring Food To Mess
+  taskCompleted: 0
+  taskObjects:
+  - interactiveObject: {fileID: 0}
+    type: 0
+    actionPos: {x: 1.82, y: 0, z: -8.57}
+    removeObject: 0
+    actionRadius: 1
+    hasDone: 0
+  - interactiveObject: {fileID: 5267085712753437581, guid: a4f20cdfe2dcb4ac2b33fb4c74629e89, type: 3}
+    type: 1
+    actionPos: {x: 19.54, y: 0, z: -17.4}
+    removeObject: 1
+    actionRadius: 1
+    hasDone: 0
